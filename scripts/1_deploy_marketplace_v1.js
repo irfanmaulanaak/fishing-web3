@@ -11,6 +11,7 @@ async function deployNFT() {
   await NFTentity.deployed()
   NFTAddress = NFTentity.address
   console.log("NFT Address deployed to: ", NFTAddress)
+  deployMarketplace();
 }
 
 async function deployMarketplace() {
@@ -28,7 +29,6 @@ async function deployMarketplace() {
 
 async function main(){
   deployNFT();
-  deployMarketplace();
 }
 
 
