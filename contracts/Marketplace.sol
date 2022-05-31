@@ -20,6 +20,7 @@ contract Marketplace is Initializable, UUPSUpgradeable, OwnableUpgradeable {
       ///@dev as there is no constructor, we need to initialise the OwnableUpgradeable explicitly
        __Ownable_init();
    }
+   
    ///@dev required by the OZ UUPS module
    function _authorizeUpgrade(address) internal override onlyOwner {}
    
