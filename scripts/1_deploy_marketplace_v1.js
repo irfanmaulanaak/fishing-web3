@@ -2,7 +2,7 @@ const { ethers, upgrades } = require("hardhat");
 
 var NFTAddress
 var NFTentity
-const platformAddress = ""
+const platformAddress = "0xEE349714fBf674DEBC335561C86aE47ddE743F5A"
 
 async function deployNFT() {
   const NFTDeployer = await ethers.getContractFactory("NFTFish")
