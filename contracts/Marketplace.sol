@@ -9,8 +9,8 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/ERC721Upgradeable.sol";
 import "./NFTFish.sol";
 
 contract Marketplace is Initializable, UUPSUpgradeable, OwnableUpgradeable {
-    address NFTAddress;
-    address platformAddress;
+    address public NFTAddress;
+    address public platformAddress;
 
     event buyEvent(address buyer, address seller, uint256 tokenId, uint256 price, uint256 timestamp);
     event sellEvent(address seller, uint256 tokenId, uint256 timestamp);
@@ -34,6 +34,5 @@ contract Marketplace is Initializable, UUPSUpgradeable, OwnableUpgradeable {
    function sell(uint256 tokenId) external {
        NFTFish(NFTAddress).approve(address(this), tokenId);
        emit sellEvent(_msgSender(), tokenId, block.timestamp);
-
    }
 }
